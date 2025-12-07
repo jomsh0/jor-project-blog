@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import BlogSummaryCard from "@/components/BlogSummaryCard";
-import { getBlogPostList } from "@/helpers/file-helpers";
+import BlogSummaryCard from '@/components/BlogSummaryCard';
+import { getBlogPostList } from '@/helpers/file-helpers';
 
-import styles from "./homepage.module.css";
+import styles from './homepage.module.css';
 
 async function Home() {
   const posts = await getBlogPostList();
@@ -12,7 +12,7 @@ async function Home() {
     <div className={styles.wrapper}>
       <h1 className={styles.mainHeading}>Latest Content:</h1>
 
-      {posts.map(post => (
+      {posts.map((post) => (
         <BlogSummaryCard key={post.slug} {...post} />
       ))}
     </div>

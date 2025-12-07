@@ -1,10 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import BlogHero from "@/components/BlogHero";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { loadBlogPost } from "@/helpers/file-helpers";
+import BlogHero from '@/components/BlogHero';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { loadBlogPost as _loadBlogPost } from '@/helpers/file-helpers';
 
-import styles from "./postSlug.module.css";
+import styles from './postSlug.module.css';
+
+const loadBlogPost = React.cache(_loadBlogPost)
+
+export async function generateMetadata({ params }) {
+  const { postSlug } = await params;
+  const { frontmatter } = await loadBlogPost(postSlug);
+  const { title, abstract: description } = frontmatter;
+
+  return { title, description };
+}
 
 async function BlogPost({ params }) {
   const { postSlug } = await params;
