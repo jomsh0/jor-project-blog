@@ -11,6 +11,9 @@ import styles from './postSlug.module.css';
 const DivisionGroupsDemo = dynamic(() =>
   import('@/components/DivisionGroupsDemo')
 );
+const CircularColorsDemo = dynamic(() =>
+  import('@/components/CircularColorsDemo')
+);
 const loadBlogPost = React.cache(_loadBlogPost);
 
 export async function generateMetadata({ params }) {
@@ -34,7 +37,11 @@ async function BlogPost({ params }) {
       <div className={styles.page}>
         <MDXRemote
           source={content}
-          components={{ pre: CodeSnippet, DivisionGroupsDemo }}
+          components={{
+            pre: CodeSnippet,
+            DivisionGroupsDemo,
+            CircularColorsDemo,
+          }}
         />
       </div>
     </article>
