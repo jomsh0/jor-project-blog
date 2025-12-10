@@ -11,20 +11,21 @@
   },
   "dependencies": {
     "bright": "1.0.0",
-    "clsx": "1.2.1",
+    "clsx": "^2.1.1",
     "date-fns": "2.30.0",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
-    "framer-motion": "~12.23.25",
+    "framer-motion": "~12.23.26",
     "gray-matter": "4.0.3",
+    "jor-project-toast": "github:jomsh0/jor-project-toast#main",
+    "jor-project-wordle": "github:jomsh0/jor-project-wordle#main",
     "js-cookie": "3.0.5",
     "new-component": "5.0.2",
-    "next": "^15.5.7",
+    "next": "^16.0.8",
     "next-mdx-remote": "5.0.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "react-feather": "2.0.10",
-    "word-game": "github:jomsh0/jor-project-wordle#library"
+    "react-feather": "2.0.10"
   },
   "prettier": {
     "singleQuote": true

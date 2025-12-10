@@ -1,7 +1,6 @@
 'use client'
 
-import Game from 'word-game'
-// import Game from 'word-game/src/components/App'
+import Game from 'jor-project-wordle'
 
 export default function WordGame() {
   return <Game />
