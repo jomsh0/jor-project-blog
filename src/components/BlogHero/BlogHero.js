@@ -7,6 +7,7 @@ import styles from './BlogHero.module.css';
 function BlogHero({
   title,
   publishedOn,
+  author,
   className,
   ...delegated
 }) {
@@ -28,6 +29,7 @@ function BlogHero({
             {humanizedDate}
           </time>
         </p>
+        <p>{author}</p>
       </div>
     </header>
   );
