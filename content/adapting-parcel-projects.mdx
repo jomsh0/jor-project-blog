@@ -3,7 +3,7 @@ title: Adapting Parcel Projects for Next.js
 abstract: This Next.js blog is a project from Josh Comeau's Joy of React course. The
  previous two projects were Parcel apps that I've adapted into distributable components
  (still built with Parcel), for use on this blog.
-publishedOn: '2025-12-10'
+publishedOn: '2025-12-10T18:30:00-0600'
 author: John Sherrell
 ---
 
@@ -13,15 +13,17 @@ This [Next.js](https://nextjs.org) blog is a project from Josh Comeau's [Joy of 
 
 A word game with a striking resemblance to a certain daily *New York Times* puzzle.
 
+See [jor-project-wordle on Github.](https://github.com/jomsh0/jor-project-wordle)
+
 ## [Toast Playground](/toast)
 
 Toasts are user-interface elements commonly used for notifications. They are floating, stacking messages that don't affect the layout of the main content. Toasts are designed to be *noticed* by the user without requiring immediate attention.
 
 This demo app consists of a form that's used to generate toasts of variuos types (notice, warning, success, and error) containing custom messages.
 
-Styles in this project use CSS Modules, meaning that no extra work (or `@scope` rule) was needed to limit their scope within a larger app. I did, however, tweak the provided desktop-only layout to work (better) at mobile sizes. 
+Styles in this project use CSS Modules, meaning that no extra work (or `@scope` rule) was needed to limit their scope within a larger app. I did, however, tweak the provided desktop-only layout to work better at mobile sizes. 
 
-The hardest part of building this one as a library was the deceptively cute toaster mascot. It seems that Parcel has its own way of working with images that differs (in my limited experience) from, say, Next.js or Astro. Here's how I got it to work:
+The hardest part of packaging this one was the deceptively cute toaster mascot. It seems that Parcel has its own way of working with images that differs (in my limited experience) from, say, Next.js or Astro. Here's how I got it to work:
 
 ```js
 function Mascot() {
@@ -32,4 +34,6 @@ function Mascot() {
 }
 ```
 
-Interestingly, the code to construct the url from `import.meta.url` is actually shipped in the bundle, along with `toast.png`. In other words, it's used twice: first by Parcel to build the library (npm) bundle, and then again by the consumer (Next.js here) to build the application (browser) bundle.
+Interestingly, the code to construct the url from `import.meta.url` is actually shipped in the bundle, along with `toast.png`. In other words, it's used twice: first by Parcel to build the distributable package bundle, and then again by the consumer (Next.js here) to build the browser bundle.
+
+See [jor-project-toast on Github.](https://github.com/jomsh0/jor-project-toast)
